@@ -5,6 +5,7 @@ import { QueryResult } from "pg";
 const { generateUserToken } = require("../middlewares/user.middleware");
 
 const signup = async (req: any, res: any) => {
+  console.log("SIGNUP request received", req.body);
   try {
     const { username, email, password } = req.body;
     const getQuery: string = `SELECT * FROM users WHERE email = $1`;

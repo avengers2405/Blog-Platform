@@ -16,6 +16,7 @@ const db_1 = require("../models/db");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const { generateUserToken } = require("../middlewares/user.middleware");
 const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("SIGNUP request received", req.body);
     try {
         const { username, email, password } = req.body;
         const getQuery = `SELECT * FROM users WHERE email = $1`;

@@ -6,13 +6,8 @@ const cron = require("node-cron");
 
 const app: Application = express();
 const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "https://blog-platform-zeta-five.vercel.app",
-    "https://blog-platform-at2g7koor-shreekar11s-projects.vercel.app",
-  ],
+  origin: '*',
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
   optionsSuccessStatus: 204,
 };
 app.use(cors(corsOptions));
@@ -41,7 +36,7 @@ app.get("/ping", (req, res) => {
   res.status(200).json("pong....");
 });
 
-const API_ENDPOINT = "https://blog-platform-vq3i.onrender.com";
+const API_ENDPOINT = process.env.CLIENT_URL || "http://localhost:5000/";
 
 const makeApiRequest = async () => {
   try {
