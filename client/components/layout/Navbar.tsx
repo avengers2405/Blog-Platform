@@ -59,7 +59,7 @@ const Navbar = () => {
           onClick={() => router.push("/")}
           className="hover:cursor-pointer text-[#4B6BFB] text-lg md:text-3xl font-semibold"
         >
-          BlogPlatform
+          BlogNest
         </div>
         <div className="relative hidden lg:flex">
           <input
